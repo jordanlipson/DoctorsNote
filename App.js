@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
-import { HomeScreen, LogScreen, ProfileScreen, ReminderScreen } from './src/screens';
+import { HomeScreen, LogScreen, ProfileScreen, ReminderScreen, LoginScreen } from './src/screens';
 import Reminder from './components/Reminder';
 
 export default function App() {
