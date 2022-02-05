@@ -1,5 +1,7 @@
 import React from 'react';
+import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
+import { HomeScreen, LogScreen, ProfileScreen, ReminderScreen } from './src/screens';
 import Reminder from './components/Reminder';
 
 export default function App() {
@@ -7,7 +9,7 @@ export default function App() {
     <View style={styles.container}>
       {/* Home Screen */}
       <View style={styles.homeWrapper}>
-        <Text style={styles.sectionTitle}>How are you doing today?</Text>
+        <Text style={styles.sectionTitle}>How today?</Text>
         
         <View style={styles.items}>
           {/* This is where the day's reminders will be displayed */}
