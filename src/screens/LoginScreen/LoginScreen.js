@@ -2,47 +2,51 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { KeyboardAvoidingView } from 'react-native-web';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import { useState } from 'react';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
   return (
-    <KeyboardAvoidingView
-        style={styles.container}
-        behaviour="padding"
-    >
-      <View styles={styles.inputContainer}>
-        <TextInput 
-            placeholder="Email"
-            value={email}
-            onChangeText={text => setEmail(text)}
-            style={styles.input}
-        />
-        <TextInput 
-            placeholder="Password"
-            value={password}
-            onChangeText={text => setPassword(text)}
-            style={styles.input}
-            secureTextEntry
-        />
-      </View>
+      <View style={styles.container}>
+          <Text>Shreya Voore</Text>
+        {/* <KeyboardAvoidingView
+            style={styles.container}
+            behaviour="padding"
+        >
+        <View style={styles.inputContainer}>
+            <TextInput 
+                placeholder="Email"
+                value={email}
+                onChangeText={text => setEmail(text)}
+                style={styles.input}
+            />
+            <TextInput 
+                placeholder="Password"
+                value={password}
+                onChangeText={text => setPassword(text)}
+                style={styles.input}
+                secureTextEntry
+            />
+        </View>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-            onPress={() => { }}
-            style={styles.button}
-        >
-            <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-            onPress={() => { }}
-            style={[styles.button, styles.buttonOutline]}
-        >
-            <Text style={styles.buttonOutlineText}>Register</Text>
-        </TouchableOpacity>
-      </View>
-    </KeyboardAvoidingView>
+        <View style={styles.buttonContainer}>
+            <TouchableOpacity
+                onPress={() => { }}
+                style={styles.button}
+            >
+                <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => { }}
+                style={[styles.button, styles.buttonOutline]}
+            >
+                <Text style={styles.buttonOutlineText}>Register</Text>
+            </TouchableOpacity>
+        </View>
+        </KeyboardAvoidingView> */}
+    </View>
   );
 };
 
@@ -85,12 +89,12 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     },
     buttonText: {
-        colour: 'white',
+        color: 'white',
         fontWeight: '700',
         fontSize: 16,
     },
     buttonOutlineText: {
-        colour: '#0782F9',
+        color: '#0782F9',
         fontWeight: '700',
         fontSize: 16,
     },
