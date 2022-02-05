@@ -7,7 +7,7 @@ export default function LoginScreen() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const onFooterLinkPress = () => {
+    const onSignupLinkPress = () => {
 
     }
 
@@ -49,7 +49,7 @@ export default function LoginScreen() {
                     <Text style={styles.buttonTitle}>Log in</Text>
                 </TouchableOpacity>
                 <View style={styles.footerView}>
-                    <Text style={styles.footerText}>Create an account: <Text onPress={onFooterLinkPress} style={styles.footerLink}>Sign up!</Text></Text>
+                    <Text style={styles.footerText}>Create an account: <Text onPress={onSignupLinkPress} style={styles.footerLink}>Sign up!</Text></Text>
                 </View>
             </KeyboardAwareScrollView>
         </View>
