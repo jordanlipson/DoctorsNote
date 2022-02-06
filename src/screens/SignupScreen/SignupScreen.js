@@ -51,10 +51,14 @@ export default function Signup({navigation}) {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} backgroundcolor="#C4D0BF">
             <KeyboardAwareScrollView
                 style={{ flex: 1, width: '100%' }}
                 keyboardShouldPersistTaps="always">
+                <Image
+                    style={styles.logo}
+                    source={require('../../images/DoctorsNoteLogo.webp')}
+                />
                 <TextInput
                     style={styles.input}
                     placeholder='Full Name'
