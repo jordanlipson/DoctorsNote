@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
+//import Reminder from '../../components/Reminder';
+import Menu from '../../../components/NavBar';
+
 
 export default function HomeScreen() {
     const makeDailyLog = () => {
@@ -25,7 +28,8 @@ export default function HomeScreen() {
                     <Text style={styles.buttonTitle}>Log my day</Text>
                 </TouchableOpacity>
                 
-                <Reminder text={'Reminder Test 1'} />
+                
+                <Menu></Menu>
 
                 
             </KeyboardAwareScrollView>

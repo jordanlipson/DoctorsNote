@@ -1,25 +1,52 @@
 import React, { useState } from 'react'
 import { Image, Text, View } from 'react-native';
+import { FlatList } from "react-native";
+import { firebase } from '../../firebase/config';
+import { getDatabase, ref, child, get } from "../../../node_modules/firebase/database";
+import styles from './styles';
+import Menu from '../../../components/NavBar';
 
 export default function HomeScreen() {
+    // const [userInfo, setUserInfo] = useState([]);
+    // const usersCollectionRef = collection(firebase.firestore.collection("users"))
+
+//     useEffect(()=>{
+//         const
+
+//         getUsers();
+//     })
+//     firebase.firestore()
+//    .collection("users")
+//    .doc(firebase.auth().currentUser.uid)
+//    .get() 
+//    .then((snapshot) => { 
+//      if (snapshot.exists) 
+//        { setUserInfo(snapshot.data()); 
+//        }
+//      })
+
+    
+
+    
+
     const getName = () => {
-        
-        return "";
+        // let name = db.collection('users').where("email", "==", user.email).select('name').get();
+        // return name;
     }
 
     const getAge = () => {
 
-        return "";
+        return user.age;
     }
 
     const getLocation = () => {
 
-        return "";
+        return user.location;
     }
 
     const getEmail = () => {
 
-        return "";
+        return user.email;
     }
 
     
@@ -34,51 +61,15 @@ export default function HomeScreen() {
     const getMedicalHistory = () => {
         // return value should be in array of objects; each illness is stored as single string value of key per object
         // i.e. one object per illness 
-        return [];
+        return user.medicalhistory;
     }
 
     const getMedication = () => {
         // return value should be in array of objects; each mediaction is stored as single string value of key per object
         // i.e. one object per illness 
-        return [];
+        return user.medication;
     }
     
-    const styles = StyleSheet.create({
-        container: {
-         flex: 1,
-         paddingTop: 22
-        },
-        item: {
-          paddingHorizontal: 20,
-          paddingVertical: 0.5,
-          fontSize: 14,
-          height: 30,
-        },
-        title: {
-          paddingHorizontal: 20,
-          fontSize: 18,
-          height: 30,
-          fontWeight: 'bold'
-        },
-        name: {
-          paddingTop: 0,
-          fontSize: 25,
-          height: 30,
-          fontWeight: 'bold'
-        },  
-        imgcontainer: {
-          paddingTop: 50,
-          paddingBottom: 50,
-          alignItems: 'center',
-        },
-        imageStyle: {
-          width: 150,
-          height: 150,
-          borderRadius: 150 / 2,
-          overflow: "hidden",
-          borderWidth: 3
-        }
-    });
       
     return (
         <View style={styles.container}>
@@ -92,10 +83,10 @@ export default function HomeScreen() {
             }}
             style={styles.imageStyle}
             />
-            <Text style={styles.name}>{getName}</Text>
+            <Text style={styles.name}>Personal Info</Text>
             </View>
             
-            <Text style={styles.title}>Personal Information</Text>
+            <Text style={styles.title}>Personal Info</Text>
             <FlatList
             data = {getPersonalData}
             renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
@@ -110,9 +101,10 @@ export default function HomeScreen() {
             data= {getMedication}
             renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
             />
+            <Menu></Menu>
 
         </View>
     );
 }
 
-export default FlatListBasics;
+//export default FlatListBasics;

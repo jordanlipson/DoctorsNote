@@ -3,20 +3,23 @@ import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen, LogScreen, ProfileScreen, ReminderScreen, LoginScreen } from './src/screens';
-import Reminder from './components/Reminder';
+import { HomeScreen, LogScreen, ProfileScreen, ReminderScreen, LoginScreen, SignupScreen } from './src/screens';
+import Menu from './components/NavBar';
+import { firebase } from './src/firebase/config';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  
   return (
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
+          <Stack.Screen name="Signup" component={SignupScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-    
 
     // <View style={styles.container}>
     //   {/* Home Screen */}
@@ -29,6 +32,7 @@ export default function App() {
     //   </View>
     // </View>
   );
+
 }
 
 const styles = StyleSheet.create({
