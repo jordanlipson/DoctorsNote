@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, SectionList, Image, StatusBar } from "react-native";
 const getName = () => {
-        return "Shreya Voore";
+        return "Jennifer Coolidge";
     }
 
     const getAge = () => {
-        return "18";
+        return "40";
     }
 
     const getLocation = () => {
@@ -13,7 +13,7 @@ const getName = () => {
     }
 
     const getEmail = () => {
-        return "shreya.voore@gmail.com";
+        return "jp.icecream88@gmail.com";
 
     }
     const getMedicalHistory = () => {
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const pfp = () => (
+const Pfp = () => (
   <SafeAreaView style={styles.container}>
   <Image
   style={styles.imgcontainer} 
@@ -100,8 +100,7 @@ const pfp = () => (
         <Text style={styles.header}>{title}</Text>
       )}
     />
-    <Menu></Menu>
   </SafeAreaView>
 );
 
-export default pfp;
+export default Pfp;

@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen, LogScreen, ProfileScreen, ReminderScreen, LoginScreen, SignupScreen } from './src/screens';
-import Menu from './components/NavBar';
 import { firebase } from './src/firebase/config';
 
 const Stack = createNativeStackNavigator();
@@ -14,23 +13,14 @@ export default function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
+          <Stack.Screen options={{ headerShown: false}} name="Login" component={LoginScreen} />
           <Stack.Screen name="Signup" component={SignupScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen options={{ headerShown: false}} name="Home" component={HomeScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="Reminders" component={ReminderScreen} />
+          <Stack.Screen name="Log" component={LogScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-
-    // <View style={styles.container}>
-    //   {/* Home Screen */}
-    //   <View style={styles.homeWrapper}>
-    //     <Text style={styles.sectionTitle}>How today?</Text>
-    //     <View style={styles.items}>
-    //       {/* This is where the day's reminders will be displayed */}
-    //       <Reminder text={'Reminder Test 1'} />
-    //     </View>
-    //   </View>
-    // </View>
   );
 
 }

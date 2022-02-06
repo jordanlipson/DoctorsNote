@@ -2,13 +2,20 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
-//import Reminder from '../../components/Reminder';
-import Menu from '../../../components/NavBar';
 
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
     const makeDailyLog = () => {
+        navigation.navigate('Log')
 
+    }
+
+    const setReminder = () => {
+        navigation.navigate('Reminders')
+    }
+
+    const checkProfile = () => {
+        navigation.navigate('Profile')
     }
 
     const getName = () => {
@@ -27,11 +34,16 @@ export default function HomeScreen() {
                     onPress={() => makeDailyLog()}>
                     <Text style={styles.buttonTitle}>Log my day</Text>
                 </TouchableOpacity>
-                
-                
-                <Menu></Menu>
-
-                
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => setReminder()}>
+                    <Text style={styles.buttonTitle}>Set or check reminders</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => checkProfile()}>
+                    <Text style={styles.buttonTitle}>Check Profile</Text>
+                </TouchableOpacity>                
             </KeyboardAwareScrollView>
         </View>
     )
