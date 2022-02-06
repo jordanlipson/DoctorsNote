@@ -21,7 +21,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} backgroundcolor="#C4D0BF">
       <Modal visible={modalOpen} animationType='slide'>
         <View style={styles.modalView}>
 
@@ -86,30 +86,31 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+    container: {
     flex: 1,
     backgroundColor: '#C4D0BF',
-  },
-  remindersWrapper: {
+    },
+    remindersWrapper: {
     paddingTop: 80,
     paddingHorizontal: 20,
-  },
-  sectionTitle: {
+    },
+    sectionTitle: {
     fontSize: 36,
     fontWeight: 'bold',
-  },
-  items: {
-      marginTop: 30,
-  },
-  writeReminderWrapper: {
+    alignSelf: "center",
+    },
+    items: {
+        marginTop: 30,
+    },
+    writeReminderWrapper: {
     position: 'absolute',
     bottom: 120,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center'
-  },
-  input: {
+    },
+    input: {
     paddingVertical: 15,
     width: 250,
     paddingHorizontal: 15,
@@ -117,8 +118,8 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     borderColor: '#C0C0C0',
     borderWidth: 1,
-  },
-  addWrapper: {
+    },
+    addWrapper: {
     width: 60,
     height: 60,
     backgroundColor: '#FFF',
@@ -127,16 +128,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  cancelReminderWrapper: {
+    },
+    cancelReminderWrapper: {
     position: 'absolute',
     bottom: 120,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center'
-  },
-  cancelWrapper: {
+    },
+    cancelWrapper: {
     width: 60,
     height: 60,
     backgroundColor: '#FFF',
@@ -145,31 +146,38 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  addText: {
+    },
+    addText: {
     fontWeight: 'normal',
     fontSize: 45,
-  },
-  modalView: {
+    },
+    modalView: {
     flex: 1,
     backgroundColor: '#C4D0BF',
     marginBottom: -20,
-  },
-  reminderDetailWrapper: {
+    },
+    reminderDetailWrapper: {
     paddingTop: 100,
     marginTop: 60,
     paddingHorizontal: 20,
     paddingVertical: 15,
     alignItems: 'center'
-  },
-  createButton: {
-    bottom: 5,
-    width: '100%',
-    alignItems: 'center',
-  },
-  createText: {
-    paddingTop: 30,
-    fontSize: 30,
-  }
+    },
+    createButton: {
+    backgroundColor: '#2d803a',
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 20,
+    height: 48,
+    paddingHorizontal: '2%',
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: 'center'
+    },
+    createText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: "bold"
+    }
 
 });

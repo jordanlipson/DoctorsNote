@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
          paddingLeft: 10,
         //  alignContent: 'center',
       alignItems: 'center',
-    backgroundColor: '#C4D0BF'
 
   },
   imgcontainer: {
@@ -90,7 +89,7 @@ const Pfp = () => (
   <SafeAreaView style={styles.container}>
   <Image
   style={styles.imgcontainer} 
-  source= {require('../../images/pfp.webp')}
+  source= {require('../../images/DoctorsNoteLogo.webp')}
   />
     <SectionList style={styles.item}
       sections={DATA}

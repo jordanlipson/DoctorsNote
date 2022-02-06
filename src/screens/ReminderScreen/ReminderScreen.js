@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, TextInput, View, StyleSheet, Keyboard, KeyboardAvoidingView, TouchableOpacity, ScrollView, Modal } from 'react-native';
+import { Image, Text, TextInput, View, StyleSheet, Keyboard, KeyboardAvoidingView, TouchableOpacity, ScrollView, Modal } from 'react-native';
 import Constants from 'expo-constants';
 import Replace from '../../../components/Replace';
 
@@ -19,15 +19,10 @@ export default function App() {
 
   const toggleReminder = (index) => {
     {/*  Click to view reminder */}
-
-
-    // let itemsCopy = [...reminderItems];
-    // itemsCopy.splice(index, 1);
-    // setReminderItems(itemsCopy);
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} backgroundcolor="#C4D0BF">
       <Modal visible={modalOpen} animationType='slide'>
         <View style={styles.modalView}>
           {/*  Create reminder */}
@@ -42,10 +37,8 @@ export default function App() {
               <TextInput style={styles.input} placeholder={'Frequency'} />
             </KeyboardAvoidingView>
             {/*  Create button */}
-            <TouchableOpacity onPress={() => handleAddReminder()} > 
-              <View style={styles.createButton}>
+            <TouchableOpacity style={styles.createButton} onPress={() => handleAddReminder()} > 
                 <Text style={styles.createText}>Create</Text>
-              </View>
             </TouchableOpacity>
           </View>
         </View>
@@ -70,6 +63,7 @@ export default function App() {
 
       {/*  All reminders */}
       <View style={styles.remindersWrapper}>
+        
         <Text style={styles.sectionTitle}>Reminders</Text>
         <View style={styles.items}>
           {/*  Reminder items will be displayed here: */}
@@ -105,6 +99,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 36,
     fontWeight: 'bold',
+    alignSelf: "center",
   },
   items: {
       marginTop: 30,
@@ -171,13 +166,20 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   createButton: {
-    bottom: 5,
-    width: '100%',
-    alignItems: 'center',
+    backgroundColor: '#2d803a',
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 20,
+    height: 48,
+    paddingHorizontal: '2%',
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: 'center'
   },
   createText: {
-    paddingTop: 30,
-    fontSize: 30,
+    color: 'white',
+    fontSize: 16,
+    fontWeight: "bold"
   }
 
 });

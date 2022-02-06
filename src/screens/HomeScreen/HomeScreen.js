@@ -23,12 +23,14 @@ export default function HomeScreen({navigation}) {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} backgroundcolor="#C4D0BF">
             <KeyboardAwareScrollView
                 style={{ flex: 1, width: '100%' }}
                 keyboardShouldPersistTaps="always">
-                <Text style={styles.titleText}>Hello {`${getName()}`}</Text>
-                <Text style={styles.text}>Add a daily log:</Text>
+                <Image
+                    style={styles.logo}
+                    source={require('../../images/DoctorsNoteLogo.webp')}
+                />
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => makeDailyLog()}>
