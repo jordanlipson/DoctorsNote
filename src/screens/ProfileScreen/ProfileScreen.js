@@ -92,7 +92,7 @@ export default function HomeScreen() {
             }}
             style={styles.imageStyle}
             />
-            <Text style={styles.name}>bonk</Text>
+            <Text style={styles.name}>{getName}</Text>
             </View>
             
             <Text style={styles.title}>Personal Information</Text>
