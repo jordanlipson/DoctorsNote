@@ -1,110 +1,107 @@
-import React, { useState } from 'react'
-import { Image, Text, View } from 'react-native';
-import { FlatList } from "react-native";
-import { firebase } from '../../firebase/config';
-import { getDatabase, ref, child, get } from "../../../node_modules/firebase/database";
-import styles from './styles';
-import Menu from '../../../components/NavBar';
-
-export default function HomeScreen() {
-    // const [userInfo, setUserInfo] = useState([]);
-    // const usersCollectionRef = collection(firebase.firestore.collection("users"))
-
-//     useEffect(()=>{
-//         const
-
-//         getUsers();
-//     })
-//     firebase.firestore()
-//    .collection("users")
-//    .doc(firebase.auth().currentUser.uid)
-//    .get() 
-//    .then((snapshot) => { 
-//      if (snapshot.exists) 
-//        { setUserInfo(snapshot.data()); 
-//        }
-//      })
-
-    
-
-    
-
-    const getName = () => {
-        // let name = db.collection('users').where("email", "==", user.email).select('name').get();
-        // return name;
+import React from "react";
+import { StyleSheet, Text, View, SafeAreaView, SectionList, Image, StatusBar } from "react-native";
+const getName = () => {
+        return "Shreya Voore";
     }
 
     const getAge = () => {
-
-        return user.age;
+        return "18";
     }
 
     const getLocation = () => {
-
-        return user.location;
+        return "Ottawa, ON";
     }
 
     const getEmail = () => {
+        return "shreya.voore@gmail.com";
 
-        return user.email;
     }
-
-    
-    const getPersonalData = () => {
-        let data = [];
-        data.push({key: "Age: " + {getAge}});
-        data.push({key: "Location: " + {getLocation}});
-        data.push({key: "Email: " + {getEmail}});
-        return data;
-    }
-
     const getMedicalHistory = () => {
-        // return value should be in array of objects; each illness is stored as single string value of key per object
-        // i.e. one object per illness 
-        return user.medicalhistory;
+
+        return ['Size','six','feet'];
     }
 
     const getMedication = () => {
-        // return value should be in array of objects; each mediaction is stored as single string value of key per object
-        // i.e. one object per illness 
-        return user.medication;
+        return ['slayful','orthopedics'];
     }
-    
-      
-    return (
-        <View style={styles.container}>
-            <View style={styles.imgcontainer}>
-            <Image
-            source={{
-            uri: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6HtMDneH4Pq_g1xMxIfwWUVKNsV63LbpSJn7G-L_vwnMJEl7D',
-            headers: {
-                Accept: '*/*',
-                },
-            }}
-            style={styles.imageStyle}
-            />
-            <Text style={styles.name}>Personal Info</Text>
-            </View>
-            
-            <Text style={styles.title}>Personal Info</Text>
-            <FlatList
-            data = {getPersonalData}
-            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-            />
-            <Text style={styles.title}>Medical History</Text>
-            <FlatList
-            data= {getMedicalHistory}
-            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-            />
-            <Text style={styles.title}>Medications</Text>
-            <FlatList
-            data= {getMedication}
-            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-            />
-            <Menu></Menu>
 
-        </View>
-    );
-}
+const DATA = [
+  {
+    title: "Personal information",
+    data: [getName(), getAge(), getLocation(), getEmail()]
+  },
+  {
+    title: "Medical History",
+    data: getMedicalHistory()
+  },
+  {
+    title: "Medication",
+    data: getMedication()
+  }
+];
 
-//export default FlatListBasics;
+const Item = ({ title }) => (
+  <View style={styles.item}>
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+         flex: 1,
+         paddingTop: 90,
+         paddingBottom: 90,
+         paddingLeft: 10,
+        //  alignContent: 'center',
+      alignItems: 'center',
+    backgroundColor: '#C4D0BF'
+
+  },
+  imgcontainer: {
+    width: 100,
+    height: 58,
+    paddingTop: 50,
+    paddingBottom: 50,
+    marginBottom: 30,
+    alignItems: 'center',
+  },
+  item: {
+    padding: 3,
+    marginHorizontal: 16,
+    borderRadius: 16,
+    backgroundColor: 'white',
+    borderColor: '#C0C0C0'
+  },
+  header: {
+    marginTop: 20,
+    textAlign: 'center',
+    fontSize: 18,
+    backgroundColor: "#ffe",
+    color: "#71826A"
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 14,
+    color: '#8E9B89'
+  }
+});
+
+const pfp = () => (
+  <SafeAreaView style={styles.container}>
+  <Image
+  style={styles.imgcontainer} 
+  source= {require('../../images/pfp.webp')}
+  />
+    <SectionList style={styles.item}
+      sections={DATA}
+      keyExtractor={(item, index) => item + index}
+      renderItem={({ item }) => <Item title={item} />}
+      renderSectionHeader={({ section: { title } }) => (
+        <Text style={styles.header}>{title}</Text>
+      )}
+    />
+    <Menu></Menu>
+  </SafeAreaView>
+);
+
+export default pfp;
