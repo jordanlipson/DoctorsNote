@@ -8,7 +8,7 @@ const Replace = (props) => {
     <View style={styles.item}>
       <View style={{flex: 1, flexDirection: 'column'}}>
         <Text style={styles.itemText}>{props.text}</Text>
-        <Text style={styles.itemAmount}>Take 1 table in the morning</Text> 
+        <Text style={styles.itemAmount}>Take 1 tablet in the morning</Text> 
         <Text style={styles.itemFreq}>Every day</Text>
       </View>
     </View>
